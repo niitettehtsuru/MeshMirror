@@ -17,7 +17,7 @@ class Node
         this.screenHeight       = screenHeight;    
         this.radius             = 2;  
         this.color              = 'black'; 
-        this.velocityMagnitude  = 1.5; 
+        this.velocityMagnitude  = 2; 
         this.velocity           = this.getRandomVelocity(); 
         this.linkDistance       = 100;//The maximum distance required for a node to link to other nodes
         this.borderIsTouched    = false;//true if node touches the bottom border, false otherwise 

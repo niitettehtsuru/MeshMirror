@@ -16,10 +16,10 @@ class Painter
         this.screenHeight  = screenHeight;  
         this.backgroundColorCounter = 0;//a number from 0 to 255, used to ensure a smooth color transition 
         this.backgroundColorCounterToggle = true;//true to move 'this.backgroundColorCounter' from 255 to 0, false to move from 0 to 255
-        this.backgroundColorCounterDelta = 2; //by how much should the 'this.backgroundColorCounter' increase or decrease
+        this.backgroundColorCounterDelta = 3; //by how much should the 'this.backgroundColorCounter' increase or decrease
         //a node set is just a bag full of 1 or more nodes. 
         //We can display just one bag of nodes or as many bags of nodes as our machine can handle
-        this.numOfNodeSets = 1;
+        this.numOfNodeSets = 2;
         this.nodeSets      = this.spawnNodesSets(this.numOfNodeSets); 
         document.addEventListener('click',(event)=>//when user clicks on the canvas
         {   
@@ -123,31 +123,28 @@ class Painter
         } 
     }
     setBackgroundOfLowerScreen(ctx)
-    {
-        //draw background color of lower half of screen
-        var grd = ctx.createLinearGradient(0, 0,this.screenWidth, 0);
-        grd.addColorStop(0, `rgba(25,${this.backgroundColorCounter},230,0.7)`);
-        //grd.addColorStop(0, `rgba(${this.backgroundColorCounter},${this.backgroundColorCounter},${this.backgroundColorCounter},0.7)`);
+    { 
+        //draw background color of lower half of screen  
+        var grd = ctx.createLinearGradient(0, 0,this.screenWidth, 0); 
+        grd.addColorStop(0, `rgba(${this.backgroundColorCounter},${this.backgroundColorCounter},${this.backgroundColorCounter},0.7)`);  
         grd.addColorStop(1, "white");
-        //grd.addColorStop(1, "rgba(0,0,0,0.5)");
         ctx.fillStyle = grd;
-        ctx.fillRect(0,this.screenHeight/2,this.screenWidth,this.screenHeight/2);  
-        /*
-        grd.addColorStop(0, `rgba(0,${this.backgroundColorCounter},0,0.5)`);
+        ctx.fillRect(0,this.screenHeight/2,this.screenWidth,this.screenHeight/2);   
+        
+        grd.addColorStop(0, `rgba(0,${this.backgroundColorCounter},0,0.4)`); 
         grd.addColorStop(1, "white");
         ctx.fillStyle = grd;
         ctx.fillRect(0,this.screenHeight/2,this.screenWidth,this.screenHeight/2);  
-        */
+        
     }
     setBackgroundOfUpperScreen(ctx)
-    {
+    {  
         //draw background color of upper half of screen
-        var grd = ctx.createLinearGradient(0, 0,this.screenWidth, 0);
-        grd.addColorStop(0, `rgba(25,${this.backgroundColorCounter},230,0.3)`); 
-        //grd.addColorStop(0, `rgba(${this.backgroundColorCounter},${this.backgroundColorCounter},${this.backgroundColorCounter},0.5)`); 
+        var grd = ctx.createLinearGradient(0, 0,this.screenWidth, 0); 
+        grd.addColorStop(0, `rgba(${this.backgroundColorCounter},${this.backgroundColorCounter},${this.backgroundColorCounter},0.5)`); 
         grd.addColorStop(1, "white");
         ctx.fillStyle = grd;
-        ctx.fillRect(0,0,this.screenWidth,this.screenHeight/2);  
+        ctx.fillRect(0,0,this.screenWidth,this.screenHeight/2); 
     } 
     draw(ctx)
     {       
