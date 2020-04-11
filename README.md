@@ -1,7 +1,6 @@
 # Mesh Mirror
 Creates and displays particles(or a mesh of particles) with their respective mirror images.
 
-![] (img/img.gif)
  
 View live demo at : https://codepen.io/niitettehtsuru/pen/GRpgvWw
  
