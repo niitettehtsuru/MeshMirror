@@ -123,28 +123,15 @@ class Painter
         } 
     }
     setBackgroundOfLowerScreen(ctx)
-    { 
-        //draw background color of lower half of screen  
-        var grd = ctx.createLinearGradient(0, 0,this.screenWidth, 0); 
-        grd.addColorStop(0, `rgba(${this.backgroundColorCounter},${this.backgroundColorCounter},${this.backgroundColorCounter},0.7)`);  
-        grd.addColorStop(1, "white");
-        ctx.fillStyle = grd;
-        ctx.fillRect(0,this.screenHeight/2,this.screenWidth,this.screenHeight/2);   
-        
-        grd.addColorStop(0, `rgba(0,${this.backgroundColorCounter},0,0.4)`); 
-        grd.addColorStop(1, "white");
-        ctx.fillStyle = grd;
-        ctx.fillRect(0,this.screenHeight/2,this.screenWidth,this.screenHeight/2);  
-        
+    {  
+        ctx.fillStyle   = "rgba(0,0,0,0.25)";
+        ctx.fillRect(0,this.screenHeight/2,this.screenWidth,this.screenHeight/2); 
     }
     setBackgroundOfUpperScreen(ctx)
-    {  
-        //draw background color of upper half of screen
-        var grd = ctx.createLinearGradient(0, 0,this.screenWidth, 0); 
-        grd.addColorStop(0, `rgba(${this.backgroundColorCounter},${this.backgroundColorCounter},${this.backgroundColorCounter},0.5)`); 
-        grd.addColorStop(1, "white");
-        ctx.fillStyle = grd;
-        ctx.fillRect(0,0,this.screenWidth,this.screenHeight/2); 
+    { 
+        ctx.fillStyle   =  "rgba(0,0,0,0.05)";
+        ctx.fillRect(0,0,this.screenWidth,this.screenHeight/2);
+         
     } 
     draw(ctx)
     {       

@@ -134,7 +134,7 @@ class Node
                     //draw link for mirror
                     var yMirrorOfOtherNode = coord.yMirror;  
                     ctx.strokeStyle = color;
-                    ctx.lineWidth = 0.3; 
+                    ctx.lineWidth = 0.3;
                     ctx.beginPath();  
                     ctx.moveTo(xOfThisNode, yMirrorOfThisNode);  
                     ctx.lineTo(xOfOtherNode, yMirrorOfOtherNode);   
